@@ -1,24 +1,11 @@
-const audio = document.querySelector("audio");
+const h2s = document.querySelectorAll("h2");
+console.log(h2s);
 
-// audio.addEventListener("play", () => {
-//   console.log("Audio is now playing");
-// });
+const iframe = document.querySelector("iframe");
+console.log(iframe);
 
-// audio.addEventListener("pause", () => {
-//   console.log("Audio is now paused");
-// });
+console.log(iframe.contentDocument);
 
-audio.addEventListener("seeking", () => {
-  console.log("Current time has been updated");
-});
-
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
-  if (button.innerText === "Play") {
-    audio.play();
-    button.innerText = "Pause";
-  } else if (button.innerText === "Pause") {
-    audio.pause();
-    button.innerText = "Play";
-  }
-});
+const h2 = iframe.contentDocument.querySelector("h2");
+h2.innerText = "Changed content";
+console.log(h2.innerText);
